@@ -1,4 +1,4 @@
-package com.loraneo.springboot.demo.controller;
+package com.loraneo.springboot.demo.commands;
 
 import com.loraneo.springboot.demo.model.Command;
 

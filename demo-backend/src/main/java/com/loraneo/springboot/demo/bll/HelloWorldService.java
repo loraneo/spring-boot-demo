@@ -1,10 +1,11 @@
-package com.loraneo.springboot.demo.controller;
+package com.loraneo.springboot.demo.bll;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.loraneo.springboot.demo.commands.TestCommand;
 import com.loraneo.springboot.demo.dal.CommandStoreRepository;
 import com.loraneo.springboot.demo.db.IdGenerator;
 import com.loraneo.springboot.demo.model.CommandStore;

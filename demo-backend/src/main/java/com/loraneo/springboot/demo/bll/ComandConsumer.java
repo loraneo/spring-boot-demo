@@ -1,4 +1,4 @@
-package com.loraneo.springboot.demo.controller;
+package com.loraneo.springboot.demo.bll;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
@@ -8,9 +8,9 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ComandReceiver {
+public class ComandConsumer {
 
-  private static final Logger LOGGER = Logger.getLogger(ComandReceiver.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(ComandConsumer.class.getName());
 
   private CountDownLatch latch = new CountDownLatch(1);
 

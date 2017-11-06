@@ -2,7 +2,7 @@
   "name": "demo-connector", 
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-    "database.hostname": "postgres", 
+    "database.hostname": "database-server", 
     "database.port": "5432",
     "database.user": "replication_user",
     "database.password": "replication_user_pwd",
