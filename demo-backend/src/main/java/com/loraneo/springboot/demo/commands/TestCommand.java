@@ -4,9 +4,15 @@ import com.loraneo.springboot.demo.model.Command;
 
 public class TestCommand implements Command {
 
+  private Long id;
+
   private String a;
 
   private String b;
+
+  public Long getId() {
+    return this.id;
+  }
 
   public String getA() {
     return this.a;
@@ -21,6 +27,11 @@ public class TestCommand implements Command {
   }
 
   public class Builder {
+    public Builder id(Long id) {
+      TestCommand.this.id = id;
+      return this;
+    }
+
     public Builder a(String a) {
       TestCommand.this.a = a;
       return this;

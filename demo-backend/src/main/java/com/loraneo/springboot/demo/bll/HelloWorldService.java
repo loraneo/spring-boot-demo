@@ -19,11 +19,15 @@ public class HelloWorldService {
   @Autowired IdGenerator idGenerator;
 
   public String getHelloMessage() {
+    createTestCommand(idGenerator.next());
+    return "Hello world!!!";
+  }
+
+  private void createTestCommand(Long id) {
     commandStoreRepository.save(
         CommandStore.builder()
-            .id(idGenerator.next())
+            .id(id)
             .payload(TestCommand.builder().a("Test2").b("Test2").build())
             .build());
-    return "Hello world!!!";
   }
 }
