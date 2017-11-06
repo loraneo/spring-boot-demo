@@ -27,7 +27,7 @@ public class HelloWorldService {
     commandStoreRepository.save(
         CommandStore.builder()
             .id(id)
-            .payload(TestCommand.builder().a("Test2").b("Test2").build())
+            .payload(TestCommand.builder().id(id).a("Test2").b("Test2").build())
             .build());
   }
 }
