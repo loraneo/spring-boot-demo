@@ -1,18 +1,13 @@
 package com.loraneo.springboot.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-@Entity
-@Table(schema = "demo", name = "command")
-public class Command {
-
-	@Id
-	Long id;
-
-	public Long getId() {
-		return id;
-	}
-
-}
+@JsonAutoDetect(
+  fieldVisibility = JsonAutoDetect.Visibility.ANY,
+  getterVisibility = JsonAutoDetect.Visibility.NONE,
+  setterVisibility = JsonAutoDetect.Visibility.NONE,
+  creatorVisibility = JsonAutoDetect.Visibility.NONE
+)
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, property = "type")
+public interface Command {}

@@ -43,6 +43,11 @@
 			<artifactId>postgresql</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.loraneo.hibernate.type</groupId>
+			<artifactId>hibernate-type-jsonb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
