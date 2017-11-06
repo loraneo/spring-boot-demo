@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SchemaService {
+public class IdGenerator {
 
 	@Autowired
 	EntityManager em;
 
 	public Long next() {
-		return Long.valueOf(em.createNativeQuery("SELECT nextval() FROM demo.id_seq").getFirstResult());
+		return ((Number)em.createNativeQuery("SELECT nextval('demo.id_seq');").getSingleResult()).longValue();
 	}
 }

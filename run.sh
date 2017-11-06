@@ -30,9 +30,15 @@ docker run -d --name kafka-connect \
 	-p 8083:8083 \
 	loraneo/docker-kafka-connect:1.0.0a
 	
+docker rm -f debezium-logstash	
 docker run -d --name debezium-logstash \
 	--network demo \
 	loraneo/docker-debezium-logstash:5.6.3a
 
+
+until $(curl --output /dev/null --silent --fail -X POST -H "Content-Type: application/json" --data "@debezium-postgres.json" 127.0.0.1:8083/connectors); do
+    printf '.'
+    sleep 5
+done
+
 	
-curl -X POST -H "Content-Type: application/json" --data "@debezium-postgres.json" 127.0.0.1:8083/connectors

@@ -1,14 +1,14 @@
 {
-  "name": "inventory-connector", 
+  "name": "demo-connector", 
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "database.hostname": "postgres", 
     "database.port": "5432",
-    "database.user": "app_user",
-    "database.password": "app_user_pwd",
+    "database.user": "replication_user",
+    "database.password": "replication_user_pwd",
     "database.dbname" : "app_db",
     "database.server.name": "application",
-    "table.whitelist": "cqrs.command_Store"
+    "table.whitelist": "demo.command_Store"
 
   }
 }
