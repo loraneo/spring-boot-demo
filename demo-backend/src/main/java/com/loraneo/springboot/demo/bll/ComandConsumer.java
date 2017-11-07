@@ -2,8 +2,6 @@ package com.loraneo.springboot.demo.bll;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.loraneo.springboot.demo.handlers.TestCommandHandler;
 import com.loraneo.springboot.demo.model.Command;
 
 import io.vavr.control.Try;

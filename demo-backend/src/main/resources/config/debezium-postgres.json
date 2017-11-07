@@ -1,0 +1,14 @@
+{
+  "name": "demo-connector", 
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "database-server", 
+    "database.port": "5432",
+    "database.user": "replication_user",
+    "database.password": "replication_user_pwd",
+    "database.dbname" : "app_db",
+    "database.server.name": "application",
+    "table.whitelist": "demo.command_Store"
+
+  }
+}
