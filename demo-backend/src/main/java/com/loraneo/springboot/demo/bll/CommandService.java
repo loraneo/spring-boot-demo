@@ -14,12 +14,14 @@ import com.loraneo.springboot.demo.model.Command;
 public class CommandService {
   private static final Logger LOG = Logger.getLogger(TestCommandHandler.class.getName());
 
-  @Autowired private List<CommandHandler<? super Command>> handlers;
+  @Autowired private List<CommandHandler<?>> handlers;
 
+  @SuppressWarnings("unchecked")
   public boolean execute(Command command) {
     LOG.fine("Received: " + command.getClass().getName());
     return handlers
         .stream()
+        .map(p -> (CommandHandler<? super Command>) p)
         .filter(p -> p.canHandle(command.getClass()))
         .findAny()
         .map(p -> p.handle(command))
